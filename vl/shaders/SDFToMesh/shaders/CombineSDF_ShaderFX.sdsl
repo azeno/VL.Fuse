@@ -1,10 +1,10 @@
 shader CombineSDF_ShaderFX : Float3ToFloat, FuseCommonSDF
 {
-    compose Float3ToFloat Input;
-    compose Float3ToFloat Input2;
+    compose Float3ToFloat A;
+    compose Float3ToFloat B;
 
     override float Compute(float3 p)
     {
-        return S(Input.Compute(p), Input2.Compute(p));
+        return S(A.Compute(p), B.Compute(p));
     }
 };
